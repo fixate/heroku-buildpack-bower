@@ -4,5 +4,5 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 
 cd $BUILD_DIR
-# We allow sudo option for dokku as it runs inside a build container which runs as sudo
-PATH="$BUILD_DIR/vendor/node/bin:$BUILD_DIR/bin:$BUILD_DIR/node_modules/.bin:$PATH" bower install --allow-sudo-option --config.storage.packages=vendor/bower/packages --config.storage.registry=vendor/bower/registry --config.tmp=vendor/bower/tmp
+# We allow root for dokku as it runs inside a build container which runs as root
+PATH="$BUILD_DIR/vendor/node/bin:$BUILD_DIR/bin:$BUILD_DIR/node_modules/.bin:$PATH" bower install --allow-root --config.storage.packages=vendor/bower/packages --config.storage.registry=vendor/bower/registry --config.tmp=vendor/bower/tmp
